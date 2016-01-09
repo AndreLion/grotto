@@ -3,11 +3,10 @@
  */
 
 var http = require('http');
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 http.createServer(function(request, response){
     response.writeHead(200, {"Content-Type": "text/plain"});
     response.write("It's alive!");
     response.end();
 }).listen(PORT);
-
