@@ -5,7 +5,7 @@
 var http = require('http'),
     log = require('./modules/logger');
 
-const PORT = process.env.NODEJS_PORT;
+const PORT = process.env.PORT;
 
 http.createServer(function(request, response){
     response.writeHead(200, {"Content-Type": "text/plain"});
