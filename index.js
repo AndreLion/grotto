@@ -6,7 +6,7 @@ var http = require('http'),
     Logger = require('le_node'),
     log;
 
-const PORT = process.env.PORT;
+const PORT = process.env.NODE_PORT;
 
 if(process.env.ENV_TYPE === 'develop') {
     log = console;
