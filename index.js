@@ -8,15 +8,20 @@ var http = require('http'),
 
 const PORT = process.env.PORT;
 
-log = new Logger({
-    token:'c63ea773-e436-4faf-a5d9-da09789c42c3'
-});
+if(process.env.ENV_TYPE === 'develop') {
+    log = console;
+} else {
+    log = new Logger({
+        token:process.env.LOG_TOKEN
+    });
+}
 
-
+log.info("I'm a Lumberjack and I'm OK");
 http.createServer(function(request, response){
     response.writeHead(200, {"Content-Type": "text/plain"});
     response.write("It's alive!");
     response.end();
+    log.log('request');
 }).listen(PORT, function(){
     log.info('Listening Port: ' + PORT);
     log.info('Server listening on: http://localhost:%s', PORT);
