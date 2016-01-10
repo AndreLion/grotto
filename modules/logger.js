@@ -3,11 +3,12 @@
  */
 
 var log;
+var Logger = require('le_node');
 
 if(process.env.ENV_TYPE === 'develop') {
     log = console;
 } else {
-    log = new require('le_node')({
+    log = new Logger({
         token:process.env.LOG_TOKEN
     });
 }
