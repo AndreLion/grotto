@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/AndreLion/grotto/issues"
   },
-  "homepage": "https://github.com/AndreLion/grotto#readme"
+  "homepage": "https://github.com/AndreLion/grotto#readme",
+  "dependencies": {
+    "le_node": "^1.1.1"
+  }
 }
