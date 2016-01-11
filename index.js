@@ -3,6 +3,7 @@
  */
 
 var http = require('http'),
+    fs = require('fs'),
     log = require('./modules/logger');
 
 const PORT = process.env.PORT;
@@ -15,4 +16,5 @@ http.createServer(function(request, response){
     log.log(request.headers);
 }).listen(PORT, function(){
     log.info('Listening Port: ' + PORT);
+    fs.openSync('/tmp/app-initialized', 'w');
 });
