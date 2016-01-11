@@ -6,7 +6,7 @@ var http = require('http'),
     fs = require('fs'),
     log = require('./modules/logger');
 
-const PORT = process.env.PORT;
+const PORT = '/tmp/nginx.socket';
 
 http.createServer(function(request, response){
     response.writeHead(200, {"Content-Type": "text/plain"});
